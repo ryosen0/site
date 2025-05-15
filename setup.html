@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ryosen0 — Сетап</title>
-  <meta name="description" content="Сетап ryosen0: PC, периферия, фототехника">
+  <title>ryosen0 — Setup</title>
+  <meta name="description" content="`ryosen0's Setup">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/colors.css">
   <link rel="icon" href="https://i.ibb.co/Pzx2kThF/photo-2025-01-30-22-47-26.jpg" type="image/jpeg">
@@ -12,12 +12,13 @@
   <style>
     .setup-container {
       max-width: 780px;
-      margin: 0 auto;
+      margin: 2rem auto;
       padding: 2rem;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border-radius: 16px;
       color: #fff;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
     
     .setup-section {
@@ -67,7 +68,6 @@
       color: #ffb4e6;
       text-decoration: none;
       transition: opacity 0.2s;
-      font-weight: 600;
     }
     
     .back-link:hover {
@@ -83,45 +83,85 @@
       font-size: 1.2rem;
       margin-bottom: 0.75rem;
     }
+
+    .lang-switch {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .lang-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .lang-btn:hover {
+      background: rgba(255, 180, 230, 0.2);
+    }
+    
+    .lang-btn.active {
+      background: #ffb4e6;
+      color: #000;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      margin: 0;
+      box-sizing: border-box;
+      background: rgba(0, 0, 0, 0.4);
+    }
   </style>
 </head>
 <body>
   <div class="retro-bg">
     <div class="setup-container">
+      <div class="lang-switch">
+        <button class="lang-btn" onclick="setLanguage('ru')" id="ru-btn">RU</button>
+        <button class="lang-btn" onclick="setLanguage('en')" id="en-btn">EN</button>
+      </div>
       <section class="setup-section">
-        <h2>Фототехника</h2>
+        <h2 data-lang="photography">Фототехника</h2>
         <ul class="setup-list">
-          <li class="setup-item"><strong>Камера</strong> Sony A6000</li>
-          <li class="setup-item"><strong>Объектив</strong> Sony SELP1650</li>
-          <li class="setup-item"><strong>Штативы</strong> Ulanzi/Raylab</li>
+          <li class="setup-item"><strong data-lang="camera">Камера</strong> Sony A6000</li>
+          <li class="setup-item"><strong data-lang="lens">Объектив</strong> Sony SELP1650</li>
+          <li class="setup-item"><strong data-lang="tripods">Штативы</strong> Ulanzi/Raylab</li>
         </ul>
       </section>
 
       <section class="setup-section">
-        <h2>Периферия</h2>
+        <h2 data-lang="peripherals">Периферия</h2>
         <ul class="setup-list">
-          <li class="setup-item"><strong>Мышка</strong> Lamzu Atlantis</li>
-          <li class="setup-item"><strong>Коврик</strong> игроман x CM Cycle XL 4mm Jaquard</li>
-          <li class="setup-item"><strong>Клавиатура</strong> AKKO MU01</li>
-          <li class="setup-item"><strong>Наушники</strong> Kiwi Ears Ellipse</li>
-          <li class="setup-item"><strong>Микрофон</strong> Fifine AM8</li>
-          <li class="setup-item"><strong>Звуковая карта</strong> Arturia Minifuse 1</li>
+          <li class="setup-item"><strong data-lang="mouse">Мышка</strong> Lamzu Atlantis</li>
+          <li class="setup-item"><strong data-lang="mousepad">Коврик</strong> игроман x CM Cycle XL 4mm Jaquard</li>
+          <li class="setup-item"><strong data-lang="keyboard">Клавиатура</strong> AKKO MU01</li>
+          <li class="setup-item"><strong data-lang="headphones">Наушники</strong> Kiwi Ears Ellipse</li>
+          <li class="setup-item"><strong data-lang="microphone">Микрофон</strong> Fifine AM8</li>
+          <li class="setup-item"><strong data-lang="soundcard">Звуковая карта</strong> Arturia Minifuse 1</li>
         </ul>
       </section>
 
       <section class="setup-section">
         <h2>PC</h2>
         <div class="subsection">
-          <h3>Мониторы</h3>
+          <h3 data-lang="monitors">Мониторы</h3>
           <ul class="setup-list">
-            <li class="setup-item"><strong>Основной</strong> Samsung F24G33TFWI (FHD, 24", 144hz)</li>
-            <li class="setup-item"><strong>Второй</strong> BenQ GL2460 (FHD, 24", 60hz)</li>
-            <li class="setup-item"><strong>Портативный</strong> <a href="https://aliexpress.ru/item/1005004495109392.html" target="_blank">Безымянный с Али (FHD, 14", 60hz)</a></li>
+            <li class="setup-item"><strong data-lang="mainMonitor">Основной</strong> Samsung F24G33TFWI (FHD, 24", 144hz)</li>
+            <li class="setup-item"><strong data-lang="secondMonitor">Второй</strong> BenQ GL2460 (FHD, 24", 60hz)</li>
+            <li class="setup-item"><strong data-lang="portableMonitor">Портативный</strong> <a href="https://aliexpress.ru/item/1005004495109392.html" target="_blank"><span data-lang="noName">Безымянный с Али</span></a> (FHD, 14", 60hz)</li>
           </ul>
         </div>
 
         <div class="subsection">
-          <h3>Сборка ПК</h3>
+          <h3 data-lang="pcBuild">Сборка ПК</h3>
           <ul class="setup-list">
             <li class="setup-item"><strong>CPU</strong> Ryzen 5 7500F</li>
             <li class="setup-item"><strong>RAM</strong> TEAMGROUP T-Create Expert 32GB 6000 mHz</li>
@@ -136,7 +176,7 @@
       </section>
 
       <section class="setup-section">
-        <h2>Хранение данных</h2>
+        <h2 data-lang="storage">Хранение данных</h2>
         <div class="subsection">
           <h3>SSD</h3>
           <ul class="setup-list">
@@ -152,10 +192,17 @@
         </div>
       </section>
 
-      <a href="index.html" class="back-link">← Вернуться на главную</a>
     </div>
     <div class="pixel-stars"></div>
   </div>
   <script src="assets/retro.js"></script>
+  <script src="assets/lang.js"></script>
+  <script>
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      updateContent();
+      updateButtons();
+    });
+  </script>
 </body>
 </html> 
