@@ -12,48 +12,141 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .main-content {
+      transition: all 0.5s ease-in-out;
+      position: relative;
+      left: 0;
+      width: 100%;
+    }
+
+    .main-content.shifted {
+      transform: scale(0.7);
+      left: -70%;
+      opacity: 0.8;
+    }
+
+    .setup-frame {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      transition: all 0.5s ease-in-out;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .setup-frame.visible {
+      right: 0;
+    }
+
+    .setup-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .close-setup {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255, 180, 230, 0.2);
+      border: none;
+      color: #ffb4e6;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      z-index: 1001;
+      display: none;
+    }
+
+    .close-setup:hover {
+      background: rgba(255, 180, 230, 0.3);
+    }
+
+    .close-setup.visible {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .main-content.shifted {
+        transform: scale(0.9);
+        left: -100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="retro-bg">
-    <div class="container">
-      <header class="main-header">
-        <img src="https://i.ibb.co/Pzx2kThF/photo-2025-01-30-22-47-26.jpg" alt="Аватар ryosen0" class="avatar">
-        <h1>ryosen0</h1>
-      </header>
-      <main>
-        <hr class="divider">
-        <section class="links">
-          <div class="links-list">
-            <a href="https://twitch.tv/ryosen0" target="_blank" class="link-btn twitch">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Twitch_Glitch_Logo_Purple.svg" alt="Twitch" />
-              Twitch
-            </a>
-            <a href="https://t.me/ryosen0" target="_blank" class="link-btn telegram">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram" />
-              Telegram
-            </a>
-            <a href="https://www.albumoftheyear.org/user/ryosen/" target="_blank" class="link-btn aoty">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Albumoftheyear2.png" alt="AOTY" />
-              AOTY
-            </a>
-            <a href="https://steamcommunity.com/id/ryosen0/" target="_blank" class="link-btn steam">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam" />
-              Steam
-            </a>
-            <a href="https://www.donationalerts.com/r/ryosen0" target="_blank" class="link-btn donate">
-              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMjFDMTIgMjEgNCAxMy41IDQgOC41QzQgNS41IDYuNSAzIDkuNSAzQzExLjEgMyAxMiA0IDEyIDRDMTIgNCAxMi45IDMgMTQuNSAzQzE3LjUgMyAyMCA1LjUgMjAgOC41QzIwIDEzLjUgMTIgMjEgMTIgMjFaIiBmaWxsPSIjZmZiNGU2Ii8+PC9zdmc+" alt="Donate" />
-              Donations
-            </a>
-          </div>
-        </section>
-      </main>
-      <footer>
-        <p>ryosen0 | <span class="japan">おやすみ</span></p>
-      </footer>
+    <div class="main-content">
+      <div class="container">
+        <header class="main-header">
+          <img src="https://i.ibb.co/Pzx2kThF/photo-2025-01-30-22-47-26.jpg" alt="Аватар ryosen0" class="avatar">
+          <h1>ryosen0</h1>
+        </header>
+        <main>
+          <hr class="divider">
+          <section class="links">
+            <div class="links-list">
+              <a href="https://twitch.tv/ryosen0" target="_blank" class="link-btn twitch">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Twitch_Glitch_Logo_Purple.svg" alt="Twitch" />
+                Twitch
+              </a>
+              <a href="https://t.me/ryosen0" target="_blank" class="link-btn telegram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram" />
+                Telegram
+              </a>
+              <a href="https://www.albumoftheyear.org/user/ryosen/" target="_blank" class="link-btn aoty">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Albumoftheyear2.png" alt="AOTY" />
+                AOTY
+              </a>
+              <a href="https://steamcommunity.com/id/ryosen0/" target="_blank" class="link-btn steam">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam" />
+                Steam
+              </a>
+              <a href="https://www.donationalerts.com/r/ryosen0" target="_blank" class="link-btn donate">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMjFDMTIgMjEgNCAxMy41IDQgOC41QzQgNS41IDYuNSAzIDkuNSAzQzExLjEgMyAxMiA0IDEyIDRDMTIgNCAxMi45IDMgMTQuNSAzQzE3LjUgMyAyMCA1LjUgMjAgOC41QzIwIDEzLjUgMTIgMjEgMTIgMjFaIiBmaWxsPSIjZmZiNGU2Ii8+PC9zdmc+" alt="Donate" />
+                <span data-lang="donations">Поддержать</span>
+              </a>
+            </div>
+          </section>
+        </main>
+        <footer>
+          <p>ryosen0 | おやすみ | <a href="#" onclick="showSetup(event)" style="color: #ffb4e6; text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'" data-lang="setup">Setup</a></p>
+        </footer>
+      </div>
+    </div>
+    <div class="setup-frame">
+      <button class="close-setup" onclick="hideSetup()">✕</button>
+      <iframe src="setup.html" title="Setup"></iframe>
     </div>
     <!-- Пиксельные звезды для анимации -->
     <div class="pixel-stars"></div>
   </div>
   <script src="assets/retro.js"></script>
+  <script src="assets/lang.js"></script>
+  <script>
+    function showSetup(e) {
+      e.preventDefault();
+      document.querySelector('.main-content').classList.add('shifted');
+      document.querySelector('.setup-frame').classList.add('visible');
+      document.querySelector('.close-setup').classList.add('visible');
+    }
+
+    function hideSetup() {
+      document.querySelector('.main-content').classList.remove('shifted');
+      document.querySelector('.setup-frame').classList.remove('visible');
+      document.querySelector('.close-setup').classList.remove('visible');
+    }
+
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      updateContent();
+    });
+  </script>
 </body>
 </html>
