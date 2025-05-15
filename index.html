@@ -131,21 +131,28 @@
   <script src="assets/lang.js"></script>
   <script>
     function showSetup(e) {
-      e.preventDefault();
+      if (e) e.preventDefault();
       document.querySelector('.main-content').classList.add('shifted');
       document.querySelector('.setup-frame').classList.add('visible');
       document.querySelector('.close-setup').classList.add('visible');
+      // Добавляем хэш в URL без перезагрузки страницы
+      history.pushState(null, null, '#setup');
     }
 
     function hideSetup() {
       document.querySelector('.main-content').classList.remove('shifted');
       document.querySelector('.setup-frame').classList.remove('visible');
       document.querySelector('.close-setup').classList.remove('visible');
+      // Удаляем хэш из URL без перезагрузки страницы
+      history.pushState(null, null, window.location.pathname);
     }
 
-    // Initialize language on page load
+    // Initialize language and check hash on page load
     document.addEventListener('DOMContentLoaded', () => {
       updateContent();
+      if (window.location.hash === '#setup') {
+        showSetup();
+      }
     });
   </script>
 </body>
