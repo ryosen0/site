@@ -1,7 +1,7 @@
 const translations = {
   ru: {
     title: "ryosen0 — Визитка",
-    description: "Визитка ryosen0: музыка, ретро-игры, покемоны, аниме, Япония.",
+    description: "Визитка ryosen0",
     setup: "Setup",
     backToMain: "← Вернуться на главную",
     donations: "Support",
@@ -27,7 +27,7 @@ const translations = {
   },
   en: {
     title: "ryosen0 — Landing Page",
-    description: "ryosen0's landing page: music, retro games, pokemon, anime, Japan.",
+    description: "ryosen0's landing page",
     setup: "Setup",
     backToMain: "← Back to Main",
     donations: "Support",
