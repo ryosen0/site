@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/colors.css">
   <link rel="icon" href="https://i.ibb.co/Pzx2kThF/photo-2025-01-30-22-47-26.jpg" type="image/jpeg">
-  <!-- Креативный ретро-шрифт -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -78,6 +77,45 @@
         left: -100%;
       }
     }
+
+    /* Кнопка-лапка */
+    .paw-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255, 180, 230, 0.15);
+      border: 2px solid #ffb4e6;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      text-decoration: none;
+      color: #ffb4e6;
+      box-shadow: 0 0 24px rgba(255, 180, 230, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 999;
+      line-height: 1;
+    }
+    .paw-btn:hover {
+      transform: scale(1.12);
+      background: rgba(255, 180, 230, 0.3);
+      box-shadow: 0 0 48px rgba(255, 180, 230, 0.5);
+      border-color: #fffbe7;
+    }
+    @media (max-width: 480px) {
+      .paw-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 1.8rem;
+        bottom: 16px;
+        right: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -124,9 +162,12 @@
       <button class="close-setup" onclick="hideSetup()">✕</button>
       <iframe src="setup.html" title="Setup"></iframe>
     </div>
-    <!-- Пиксельные звезды для анимации -->
     <div class="pixel-stars"></div>
   </div>
+
+  <!-- Кнопка перехода на прайс-лист -->
+  <a href="pricelist.html" class="paw-btn" aria-label="Прайс-лист Собакотофона">🐾</a>
+
   <script src="assets/retro.js"></script>
   <script src="assets/lang.js"></script>
   <script>
@@ -135,7 +176,6 @@
       document.querySelector('.main-content').classList.add('shifted');
       document.querySelector('.setup-frame').classList.add('visible');
       document.querySelector('.close-setup').classList.add('visible');
-      // Добавляем хэш в URL без перезагрузки страницы
       history.pushState(null, null, '#setup');
     }
 
@@ -143,11 +183,9 @@
       document.querySelector('.main-content').classList.remove('shifted');
       document.querySelector('.setup-frame').classList.remove('visible');
       document.querySelector('.close-setup').classList.remove('visible');
-      // Удаляем хэш из URL без перезагрузки страницы
       history.pushState(null, null, window.location.pathname);
     }
 
-    // Initialize language and check hash on page load
     document.addEventListener('DOMContentLoaded', () => {
       updateContent();
       if (window.location.hash === '#setup') {
