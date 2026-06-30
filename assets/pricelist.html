@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прайс-лист Собакотофона</title>
+    <meta name="description" content="Прайс-лист и награды за донаты">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/colors.css">
+    <link rel="icon" href="https://i.ibb.co/Pzx2kThF/photo-2025-01-30-22-47-26.jpg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для прайс-листа, сохраняющие общую стилистику */
+        .price-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        .price-item {
+            background: rgba(20, 24, 40, 0.9);
+            border: 2px solid var(--glow-cyan, #6be0ff);
+            border-radius: 18px;
+            padding: 24px 28px;
+            box-shadow: 0 0 32px rgba(107, 224, 255, 0.15);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 12px 20px;
+        }
+        .price-item:hover {
+            border-color: var(--main-accent, #ffb4e6);
+            box-shadow: 0 0 48px rgba(255, 180, 230, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .price-tag {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--main-accent, #ffb4e6);
+            letter-spacing: -0.01em;
+        }
+
+        .price-desc {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--main-white, #fffbe7);
+            opacity: 0.95;
+        }
+
+        .price-note {
+            width: 100%;
+            font-size: 0.9rem;
+            color: var(--glow-cyan, #6be0ff);
+            opacity: 0.6;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .rewards-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--main-yellow, #ffe066);
+            text-shadow: 0 0 24px rgba(255, 224, 102, 0.3);
+            margin: 32px 0 20px 0;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
+
+        .reward-item {
+            background: rgba(20, 24, 40, 0.9);
+            border: 2px solid var(--main-yellow, #ffe066);
+            border-radius: 18px;
+            padding: 20px 24px;
+            box-shadow: 0 0 24px rgba(255, 224, 102, 0.12);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 12px 16px;
+        }
+        .reward-item:hover {
+            border-color: var(--main-accent, #ffb4e6);
+            box-shadow: 0 0 40px rgba(255, 180, 230, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .reward-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--main-yellow, #ffe066);
+            text-shadow: 0 0 16px rgba(255, 224, 102, 0.3);
+            text-align: center;
+            flex-shrink: 0;
+            min-width: 80px;
+        }
+
+        .reward-desc {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--main-white, #fffbe7);
+            opacity: 0.95;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .reward-desc small {
+            display: block;
+            font-weight: 400;
+            color: var(--glow-cyan, #6be0ff);
+            opacity: 0.65;
+            font-size: 0.9rem;
+            margin-top: 2px;
+        }
+
+        /* Центрирование всего контента на странице */
+        .container {
+            text-align: center;
+        }
+        .main-header {
+            text-align: center;
+        }
+        hr.divider {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="retro-bg">
+        <div class="main-content">
+            <div class="container">
+                <header class="main-header">
+                    <img src="https://i.ibb.co/Pzx2kThF/photo-2025-01-30-22-47-26.jpg" alt="Аватар" class="avatar">
+                    <h1>Прайс-лист Собакотофона</h1>
+                    <p class="subtitle">цены и награды за донаты</p>
+                </header>
+                <hr class="divider">
+
+                <section class="price-grid">
+                    <!-- Услуга -->
+                    <div class="price-item">
+                        <span class="price-tag">2500₽/час</span>
+                        <span class="price-desc">ходьба с клоунским носом</span>
+                        <span class="price-note">базовая услуга</span>
+                    </div>
+
+                    <div class="rewards-title">Награды за донат</div>
+
+                    <!-- Награда 5000 -->
+                    <div class="reward-item">
+                        <span class="reward-amount">5000₽</span>
+                        <span class="reward-desc">
+                            рисунок меня в костюме горничной
+                            <small>персональный арт</small>
+                        </span>
+                    </div>
+
+                    <!-- Награда 20000 -->
+                    <div class="reward-item">
+                        <span class="reward-amount">20 000₽</span>
+                        <span class="reward-desc">
+                            2 стрима (около 10 часов) в ушках и полосатых чулках
+                            <small>уютные стримы</small>
+                        </span>
+                    </div>
+
+                    <!-- Награда 50000 -->
+                    <div class="reward-item">
+                        <span class="reward-amount">50 000₽</span>
+                        <span class="reward-desc">
+                            2 стрима (около 10 часов) в костюме горничной
+                            <small>костюм будет заказан сразу после доната</small>
+                        </span>
+                    </div>
+                </section>
+
+                <footer>
+                    <p>собакотофон &bull; все цены в рублях</p>
+                </footer>
+            </div>
+        </div>
+        <div class="pixel-stars"></div>
+    </div>
+
+    <script src="assets/retro.js"></script>
+    <script src="assets/lang.js"></script>
+</body>
+</html>
